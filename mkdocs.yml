@@ -1,0 +1,35 @@
+site_name: eSign JAVA SDK v1.0
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+
+nav:
+  - Home: index.md
+  - Quick Start Guide: quick-start-guide.md
+  - Technical Documentation Part 1: eSign-sdk-technical-documentation.md
+  - Technical Documentation Part 2: eSign-sdk-technical-documentation-part2.md
+  - Deployment Checks: deployment-checklist.md
+  - API Reference: api-reference-card.md
