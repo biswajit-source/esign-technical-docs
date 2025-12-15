@@ -1,0 +1,3117 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../eSign-sdk-technical-documentation/">
+      
+      
+        <link rel="next" href="../deployment-checklist/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Technical Documentation Part 2 - eSign JAVA SDK v1.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#esign-sdk-v210-technical-documentation-part-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="eSign JAVA SDK v1.0" class="md-header__button md-logo" aria-label="eSign JAVA SDK v1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eSign JAVA SDK v1.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Documentation Part 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="eSign JAVA SDK v1.0" class="md-nav__button md-logo" aria-label="eSign JAVA SDK v1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    eSign JAVA SDK v1.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eSign-sdk-technical-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation Part 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#73-detailed-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Detailed API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Detailed API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-set-esign-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 Set eSign Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-serve-pdf-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 Serve PDF Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-step-1-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 Step 1: Upload PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#734-step-2-set-signer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4 Step 2: Set Signer Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#735-step-3-generate-document-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.5 Step 3: Generate Document Hash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#736-step-4-convert-hash-to-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.6 Step 4: Convert Hash to Hex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#737-step-5-generate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.7 Step 5: Generate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#738-step-6-construct-xml-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.8 Step 6: Construct XML Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#739-step-7-sign-xml-with-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.9 Step 7: Sign XML with Certificate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7310-step-8-generate-esp-redirect-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.10 Step 8: Generate ESP Redirect Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7311-esp-response-callback-esign-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.11 ESP Response Callback (eSign 2.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7312-esp-getdocs-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.12 ESP GetDocs Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7313-esp-redirect-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.13 ESP Redirect Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7314-get-esp-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.14 Get ESP Response Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7315-embed-signature-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.15 Embed Signature (Manual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7316-step-9-embed-signature-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.16 Step 9: Embed Signature (Workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7317-get-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.17 Get Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7318-reset-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.18 Reset Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-usage-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Usage Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Usage Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-complete-workflow-esign-21-otp-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Complete Workflow - eSign 2.1 (OTP-based)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 Complete Workflow - eSign 2.1 (OTP-based)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-complete-workflow-esign-32-ekyc-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Complete Workflow - eSign 3.2 (eKYC-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-javascript-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 JavaScript Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-python-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Python Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-java-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Java Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-security-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Security &amp; Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Security &amp; Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-security-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Security Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 Security Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911-cryptographic-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1 Cryptographic Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912-xml-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.2 XML Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913-transport-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.3 Transport Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-indian-it-act-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1 Indian IT Act Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.2 Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 Production Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-certificate-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 Certificate Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3 Session Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Common Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-application-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Application Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-pdf-upload-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 PDF Upload Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-esp-communication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 ESP Communication Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-signature-embedding-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 Signature Embedding Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-enable-debug-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Enable Debug Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Check Application Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-test-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Test API Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Performance Tuning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Performance Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-jvm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 JVM Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-file-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 File Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-appendices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Appendices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Appendices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Glossary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-file-structure-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 File Structure Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-support-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Support &amp; Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Revision History
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference-card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#73-detailed-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Detailed API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Detailed API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-set-esign-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 Set eSign Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-serve-pdf-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 Serve PDF Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-step-1-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 Step 1: Upload PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#734-step-2-set-signer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.4 Step 2: Set Signer Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#735-step-3-generate-document-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.5 Step 3: Generate Document Hash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#736-step-4-convert-hash-to-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.6 Step 4: Convert Hash to Hex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#737-step-5-generate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.7 Step 5: Generate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#738-step-6-construct-xml-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.8 Step 6: Construct XML Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#739-step-7-sign-xml-with-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.9 Step 7: Sign XML with Certificate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7310-step-8-generate-esp-redirect-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.10 Step 8: Generate ESP Redirect Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7311-esp-response-callback-esign-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.11 ESP Response Callback (eSign 2.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7312-esp-getdocs-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.12 ESP GetDocs Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7313-esp-redirect-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.13 ESP Redirect Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7314-get-esp-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.14 Get ESP Response Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7315-embed-signature-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.15 Embed Signature (Manual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7316-step-9-embed-signature-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.16 Step 9: Embed Signature (Workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7317-get-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.17 Get Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7318-reset-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.18 Reset Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-usage-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Usage Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Usage Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-complete-workflow-esign-21-otp-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Complete Workflow - eSign 2.1 (OTP-based)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 Complete Workflow - eSign 2.1 (OTP-based)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-complete-workflow-esign-32-ekyc-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Complete Workflow - eSign 3.2 (eKYC-based)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-javascript-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 JavaScript Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-python-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Python Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-java-integration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Java Integration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-security-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Security &amp; Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Security &amp; Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-security-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Security Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 Security Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911-cryptographic-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1 Cryptographic Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912-xml-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.2 XML Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913-transport-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.3 Transport Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-indian-it-act-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1 Indian IT Act Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.2 Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 Production Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-certificate-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 Certificate Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3 Session Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Common Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-application-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Application Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-pdf-upload-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 PDF Upload Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-esp-communication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 ESP Communication Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-signature-embedding-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 Signature Embedding Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-enable-debug-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Enable Debug Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Check Application Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-test-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Test API Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-performance-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Performance Tuning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 Performance Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-jvm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 JVM Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-file-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 File Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-appendices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Appendices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Appendices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Glossary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-file-structure-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 File Structure Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-support-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Support &amp; Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Revision History
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="esign-sdk-v210-technical-documentation-part-2">eSign SDK v2.1.0 - Technical Documentation (Part 2)</h1>
+<h2 id="73-detailed-api-reference">7.3 Detailed API Reference</h2>
+<h3 id="731-set-esign-mode">7.3.1 Set eSign Mode</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/set-mode</code></p>
+<p><strong>Description:</strong> Set the eSign mode to either 2.1 (OTP-based) or 3.2 (eKYC-based)</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Request Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>eSign mode: "2.1" or "3.2"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (Success):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;modeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OTP-based Signing&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eSign mode set to 2.1&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response (Error):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid mode. Use &#39;2.1&#39; or &#39;3.2&#39;&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example (cURL):</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/set-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;mode&quot;:&quot;2.1&quot;}&#39;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="732-serve-pdf-document">7.3.2 Serve PDF Document</h3>
+<p><strong>Endpoint:</strong> <code>GET /api/esign/documents/{documentId}.pdf</code></p>
+<p><strong>Description:</strong> Serve a PDF document publicly (required for eSign 3.2)</p>
+<p><strong>Path Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>documentId</code></td>
+<td>string</td>
+<td>Document identifier (UUID)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong> PDF file (application/pdf)</p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/api/esign/documents/abc123.pdf<span class="w"> </span>-o<span class="w"> </span>document.pdf
+</code></pre></div></p>
+<hr />
+<h3 id="733-step-1-upload-pdf">7.3.3 Step 1: Upload PDF</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step1/upload</code></p>
+<p><strong>Description:</strong> Upload a PDF file for signing</p>
+<p><strong>Request:</strong> Multipart form data
+- <code>file</code>: PDF file (max 50MB)</p>
+<p><strong>Response (Success):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PDF uploaded successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;fileName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract.pdf&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;fileSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">245678</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;savedPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./temp/abc123.pdf&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;documentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;documentPublicUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/api/esign/documents/abc123.pdf&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;esignMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example (cURL):</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step1/upload<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file=@/path/to/document.pdf&quot;</span>
+</code></pre></div></p>
+<p><strong>Example (JavaScript):</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pdfFile</span><span class="p">);</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost:8080/api/esign/step1/upload&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">formData</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+</code></pre></div></p>
+<hr />
+<h3 id="734-step-2-set-signer-details">7.3.4 Step 2: Set Signer Details</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step2/signer-details</code></p>
+<p><strong>Description:</strong> Set signer information and signature position</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;signerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;docInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Employment Contract&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pageNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;x1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;y1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;x2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;y2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Request Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>signerName</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>-</td>
+<td>Name of the signer</td>
+</tr>
+<tr>
+<td><code>docInfo</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>-</td>
+<td>Document description</td>
+</tr>
+<tr>
+<td><code>pageNo</code></td>
+<td>integer</td>
+<td>No</td>
+<td>1</td>
+<td>Page number for signature</td>
+</tr>
+<tr>
+<td><code>x1</code></td>
+<td>integer</td>
+<td>No</td>
+<td>350</td>
+<td>Signature box X1 coordinate</td>
+</tr>
+<tr>
+<td><code>y1</code></td>
+<td>integer</td>
+<td>No</td>
+<td>50</td>
+<td>Signature box Y1 coordinate</td>
+</tr>
+<tr>
+<td><code>x2</code></td>
+<td>integer</td>
+<td>No</td>
+<td>550</td>
+<td>Signature box X2 coordinate</td>
+</tr>
+<tr>
+<td><code>y2</code></td>
+<td>integer</td>
+<td>No</td>
+<td>120</td>
+<td>Signature box Y2 coordinate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signer details set successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;docInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Employment Contract&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signaturePosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;x1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;x2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example (cURL):</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step2/signer-details<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;signerName&quot;: &quot;John Doe&quot;,</span>
+<span class="s1">    &quot;docInfo&quot;: &quot;Employment Contract&quot;,</span>
+<span class="s1">    &quot;pageNo&quot;: 1,</span>
+<span class="s1">    &quot;x1&quot;: 350,</span>
+<span class="s1">    &quot;y1&quot;: 50,</span>
+<span class="s1">    &quot;x2&quot;: 550,</span>
+<span class="s1">    &quot;y2&quot;: 120</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="735-step-3-generate-document-hash">7.3.5 Step 3: Generate Document Hash</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step3/generate-hash</code></p>
+<p><strong>Description:</strong> Generate SHA-256 hash of the PDF document</p>
+<p><strong>Request:</strong> No body required (uses session data)</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Document hash generated successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hashAlgorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHA-256&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hashBytes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;hashLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step3/generate-hash<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="736-step-4-convert-hash-to-hex">7.3.6 Step 4: Convert Hash to Hex</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step4/convert-hex</code></p>
+<p><strong>Description:</strong> Convert hash bytes to hexadecimal string</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hash converted to hex successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hashHex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d4e7b9a...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;hashLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">64</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="737-step-5-generate-transaction-id">7.3.7 Step 5: Generate Transaction ID</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step5/generate-txn</code></p>
+<p><strong>Description:</strong> Generate unique transaction ID for this signing session</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction ID generated successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;transactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UKC:public:abc12345&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-15T15:30:00&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="738-step-6-construct-xml-request">7.3.8 Step 6: Construct XML Request</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step6/construct-xml</code></p>
+<p><strong>Description:</strong> Construct eSign XML request according to protocol</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XML request constructed successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;xmlPreview&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;&lt;Esign ver=\&quot;2.1\&quot; ...&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;xmlLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2456</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="739-step-7-sign-xml-with-certificate">7.3.9 Step 7: Sign XML with Certificate</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step7/sign-xml</code></p>
+<p><strong>Description:</strong> Sign the XML request with ASP certificate</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;XML signed successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signedXmlPreview&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;&lt;Esign ...&gt;&lt;Signature ...&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signatureAlgorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RSA-SHA256&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;certificateSubject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CN=YourASP, O=YourOrg, C=IN&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="7310-step-8-generate-esp-redirect-form">7.3.10 Step 8: Generate ESP Redirect Form</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step8/generate-esp-form</code></p>
+<p><strong>Description:</strong> Generate HTML form to redirect user to ESP</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ESP redirect form generated&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;espUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://demo.esign.digital/esign/2.1/signdoc/&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;htmlForm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;html&gt;&lt;body&gt;&lt;form method=&#39;POST&#39; ...&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;autoSubmit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Usage:</strong> Load the <code>htmlForm</code> in browser to redirect user to ESP</p>
+<hr />
+<h3 id="7311-esp-response-callback-esign-21">7.3.11 ESP Response Callback (eSign 2.1)</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/esp-response</code></p>
+<p><strong>Description:</strong> Callback endpoint where ESP posts the signed response (eSign 2.1)</p>
+<p><strong>Request Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>esignresp</code></td>
+<td>string</td>
+<td>Signed XML response from ESP</td>
+</tr>
+<tr>
+<td><code>msg</code></td>
+<td>string</td>
+<td>Alternative parameter name</td>
+</tr>
+<tr>
+<td><code>eSignResponse</code></td>
+<td>string</td>
+<td>Alternative parameter name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong> HTML page displaying the response</p>
+<p><strong>Note:</strong> This endpoint is called by ESP, not by your application</p>
+<hr />
+<h3 id="7312-esp-getdocs-callback-esign-32">7.3.12 ESP GetDocs Callback (eSign 3.2)</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/3.2/getdocs/</code></p>
+<p><strong>Description:</strong> Callback endpoint where ESP posts signed documents (eSign 3.2)</p>
+<p><strong>Response:</strong> <code>OK</code> (acknowledgment)</p>
+<hr />
+<h3 id="7313-esp-redirect-callback-esign-32">7.3.13 ESP Redirect Callback (eSign 3.2)</h3>
+<p><strong>Endpoint:</strong> <code>GET/POST /api/esign/3.2/callback/</code></p>
+<p><strong>Description:</strong> Redirect URL where user is sent after signing (eSign 3.2)</p>
+<p><strong>Query Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>txnRef</code></td>
+<td>string</td>
+<td>Base64-encoded transaction reference</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Signing status</td>
+</tr>
+<tr>
+<td><code>txn</code></td>
+<td>string</td>
+<td>Transaction ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong> HTML page with signing status</p>
+<hr />
+<h3 id="7314-get-esp-response-data">7.3.14 Get ESP Response Data</h3>
+<p><strong>Endpoint:</strong> <code>GET /api/esign/esp-response-data</code></p>
+<p><strong>Description:</strong> Retrieve ESP response data from session</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;espResponseReceived&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;responseXml&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pkcs7Signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIIGxwYJKoZIhvcNAQcCoIIGuDCC...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;transactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UKC:public:abc12345&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="7315-embed-signature-manual">7.3.15 Embed Signature (Manual)</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/embed-signature</code></p>
+<p><strong>Description:</strong> Manually embed PKCS#7 signature into PDF</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;transactionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UKC:public:abc12345&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signature embedded successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signedPdfPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./signed/contract_signed_abc123.pdf&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;downloadUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/download/contract_signed_abc123.pdf&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="7316-step-9-embed-signature-workflow">7.3.16 Step 9: Embed Signature (Workflow)</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/step9/embed-signature</code></p>
+<p><strong>Description:</strong> Step 9 in the workflow - embed signature into PDF</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;outputFileName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_signed.pdf&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Signature embedded successfully&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signedPdfPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./signed/contract_signed.pdf&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;fileSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">256789</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;signedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-15T15:35:00&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="7317-get-configuration">7.3.17 Get Configuration</h3>
+<p><strong>Endpoint:</strong> <code>GET /api/esign/config</code></p>
+<p><strong>Description:</strong> Get current configuration (sanitized)</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;esp21Url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://demo.esign.digital/esign/2.1/signdoc/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;esp32Url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://demo.esign.digital/esign/3.2/signdoc/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;aspId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capricornaspid&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tempPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./temp/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./signed/&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Note:</strong> Sensitive data (passwords, certificates) are not included</p>
+<hr />
+<h3 id="7318-reset-session">7.3.18 Reset Session</h3>
+<p><strong>Endpoint:</strong> <code>POST /api/esign/reset</code></p>
+<p><strong>Description:</strong> Reset the current signing session</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Session reset successfully&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="8-usage-guide">8. Usage Guide</h2>
+<h3 id="81-complete-workflow-esign-21-otp-based">8.1 Complete Workflow - eSign 2.1 (OTP-based)</h3>
+<h4 id="step-by-step-process">Step-by-Step Process</h4>
+<p><strong>Step 1: Set Mode</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/set-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;mode&quot;:&quot;2.1&quot;}&#39;</span>
+</code></pre></div></p>
+<p><strong>Step 2: Upload PDF</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step1/upload<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file=@contract.pdf&quot;</span>
+</code></pre></div></p>
+<p><strong>Step 3: Set Signer Details</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step2/signer-details<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;signerName&quot;: &quot;John Doe&quot;,</span>
+<span class="s1">    &quot;docInfo&quot;: &quot;Employment Contract&quot;</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div></p>
+<p><strong>Step 4: Generate Hash</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step3/generate-hash
+</code></pre></div></p>
+<p><strong>Step 5: Convert to Hex</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step4/convert-hex
+</code></pre></div></p>
+<p><strong>Step 6: Generate Transaction ID</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step5/generate-txn
+</code></pre></div></p>
+<p><strong>Step 7: Construct XML</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step6/construct-xml
+</code></pre></div></p>
+<p><strong>Step 8: Sign XML</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step7/sign-xml
+</code></pre></div></p>
+<p><strong>Step 9: Generate ESP Form</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step8/generate-esp-form
+</code></pre></div></p>
+<p><strong>Step 10: User Signs at ESP</strong>
+- Load the HTML form in browser
+- User enters Aadhaar number and OTP
+- ESP redirects back to your callback URL</p>
+<p><strong>Step 11: Embed Signature</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step9/embed-signature<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;outputFileName&quot;: &quot;contract_signed.pdf&quot;}&#39;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="82-complete-workflow-esign-32-ekyc-based">8.2 Complete Workflow - eSign 3.2 (eKYC-based)</h3>
+<p>The workflow is similar to 2.1, with these differences:</p>
+<ol>
+<li>
+<p><strong>Set mode to 3.2:</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/set-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;mode&quot;:&quot;3.2&quot;}&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Different ESP URLs</strong> are used automatically</p>
+</li>
+<li><strong>Two callbacks:</strong></li>
+<li><code>/api/esign/3.2/getdocs/</code> - ESP posts signature</li>
+<li><code>/api/esign/3.2/callback/</code> - User redirect</li>
+</ol>
+<hr />
+<h3 id="83-javascript-integration-example">8.3 JavaScript Integration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">ESignClient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://localhost:8080&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">baseUrl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/api/esign`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">setMode</span><span class="p">(</span><span class="nx">mode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="si">}</span><span class="sb">/set-mode`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">mode</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">uploadPdf</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="si">}</span><span class="sb">/step1/upload`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">formData</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">setSignerDetails</span><span class="p">(</span><span class="nx">signerName</span><span class="p">,</span><span class="w"> </span><span class="nx">docInfo</span><span class="p">,</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="si">}</span><span class="sb">/step2/signer-details`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">signerName</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">docInfo</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">pageNo</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">pageNo</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">x1</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">x1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">350</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">y1</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">y1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">x2</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">x2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">550</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">y2</span><span class="o">:</span><span class="w"> </span><span class="nx">position</span><span class="p">.</span><span class="nx">y2</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">120</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">executeStep</span><span class="p">(</span><span class="nx">stepNumber</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">endpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step3/generate-hash&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">4</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step4/convert-hex&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">5</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step5/generate-txn&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">6</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step6/construct-xml&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">7</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step7/sign-xml&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="mf">8</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step8/generate-esp-form&#39;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">endpoints</span><span class="p">[</span><span class="nx">stepNumber</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">embedSignature</span><span class="p">(</span><span class="nx">outputFileName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">apiBase</span><span class="si">}</span><span class="sb">/step9/embed-signature`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">outputFileName</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="nx">completeSigningWorkflow</span><span class="p">(</span><span class="nx">pdfFile</span><span class="p">,</span><span class="w"> </span><span class="nx">signerName</span><span class="p">,</span><span class="w"> </span><span class="nx">docInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Step 1: Upload PDF</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Uploading PDF...&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">uploadPdf</span><span class="p">(</span><span class="nx">pdfFile</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">// Step 2: Set signer details</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Setting signer details...&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">setSignerDetails</span><span class="p">(</span><span class="nx">signerName</span><span class="p">,</span><span class="w"> </span><span class="nx">docInfo</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">// Steps 3-8: Execute workflow</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span><span class="w"> </span><span class="nx">step</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Executing step </span><span class="si">${</span><span class="nx">step</span><span class="si">}</span><span class="sb">...`</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">executeStep</span><span class="p">(</span><span class="nx">step</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">step</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="c1">// Step 8 returns HTML form - display it</span>
+<span class="w">          </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">htmlForm</span><span class="p">;</span>
+<span class="w">          </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// User will be redirected to ESP</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error in signing workflow:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Usage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">esign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ESignClient</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fileInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;pdfFile&#39;</span><span class="p">);</span>
+
+<span class="nx">esign</span><span class="p">.</span><span class="nx">completeSigningWorkflow</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span>
+<span class="w">  </span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;Employment Contract&#39;</span>
+<span class="p">);</span>
+</code></pre></div>
+<hr />
+<h3 id="84-python-integration-example">8.4 Python Integration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ESignClient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s1">&#39;http://localhost:8080&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s1">/api/esign&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api_base</span><span class="si">}</span><span class="s1">/set-mode&#39;</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="n">mode</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">upload_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">}</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api_base</span><span class="si">}</span><span class="s1">/step1/upload&#39;</span><span class="p">,</span>
+                <span class="n">files</span><span class="o">=</span><span class="n">files</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_signer_details</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signer_name</span><span class="p">,</span> <span class="n">doc_info</span><span class="p">,</span> <span class="o">**</span><span class="n">position</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;signerName&#39;</span><span class="p">:</span> <span class="n">signer_name</span><span class="p">,</span>
+            <span class="s1">&#39;docInfo&#39;</span><span class="p">:</span> <span class="n">doc_info</span><span class="p">,</span>
+            <span class="s1">&#39;pageNo&#39;</span><span class="p">:</span> <span class="n">position</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pageNo&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="s1">&#39;x1&#39;</span><span class="p">:</span> <span class="n">position</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="mi">350</span><span class="p">),</span>
+            <span class="s1">&#39;y1&#39;</span><span class="p">:</span> <span class="n">position</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;y1&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+            <span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="n">position</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="mi">550</span><span class="p">),</span>
+            <span class="s1">&#39;y2&#39;</span><span class="p">:</span> <span class="n">position</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;y2&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api_base</span><span class="si">}</span><span class="s1">/step2/signer-details&#39;</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="n">data</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step_number</span><span class="p">):</span>
+        <span class="n">endpoints</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;step3/generate-hash&#39;</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;step4/convert-hex&#39;</span><span class="p">,</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;step5/generate-txn&#39;</span><span class="p">,</span>
+            <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;step6/construct-xml&#39;</span><span class="p">,</span>
+            <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;step7/sign-xml&#39;</span><span class="p">,</span>
+            <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;step8/generate-esp-form&#39;</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api_base</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">endpoints</span><span class="p">[</span><span class="n">step_number</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">embed_signature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">api_base</span><span class="si">}</span><span class="s1">/step9/embed-signature&#39;</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;outputFileName&#39;</span><span class="p">:</span> <span class="n">output_filename</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">complete_signing_workflow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">,</span> <span class="n">signer_name</span><span class="p">,</span> <span class="n">doc_info</span><span class="p">):</span>
+        <span class="c1"># Step 1: Upload PDF</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uploading PDF...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upload_pdf</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+
+        <span class="c1"># Step 2: Set signer details</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Setting signer details...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_signer_details</span><span class="p">(</span><span class="n">signer_name</span><span class="p">,</span> <span class="n">doc_info</span><span class="p">)</span>
+
+        <span class="c1"># Steps 3-8</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Executing step </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s1">...&#39;</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_step</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+                <span class="c1"># Save ESP form to file</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;esp_redirect.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;htmlForm&#39;</span><span class="p">])</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ESP redirect form saved to esp_redirect.html&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Open this file in browser to complete signing&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Usage</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ESignClient</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s1">&#39;2.1&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">complete_signing_workflow</span><span class="p">(</span>
+    <span class="s1">&#39;contract.pdf&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Employment Contract&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="85-java-integration-example">8.5 Java Integration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.http.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.gson.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ESignClient</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">baseUrl</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apiBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">httpClient</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Gson</span><span class="w"> </span><span class="n">gson</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">CookieManager</span><span class="w"> </span><span class="n">cookieManager</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ESignClient</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">baseUrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseUrl</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">apiBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/api/esign&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cookieManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CookieManager</span><span class="p">();</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">httpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">cookieHandler</span><span class="p">(</span><span class="n">cookieManager</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">gson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Gson</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">JsonObject</span><span class="w"> </span><span class="nf">setMode</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mode</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">JsonObject</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JsonObject</span><span class="p">();</span>
+<span class="w">        </span><span class="n">request</span><span class="p">.</span><span class="na">addProperty</span><span class="p">(</span><span class="s">&quot;mode&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">HttpRequest</span><span class="w"> </span><span class="n">httpRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">apiBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/set-mode&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">POST</span><span class="p">(</span><span class="n">HttpRequest</span><span class="p">.</span><span class="na">BodyPublishers</span><span class="p">.</span><span class="na">ofString</span><span class="p">(</span><span class="n">gson</span><span class="p">.</span><span class="na">toJson</span><span class="p">(</span><span class="n">request</span><span class="p">)))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="na">send</span><span class="p">(</span>
+<span class="w">            </span><span class="n">httpRequest</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">HttpResponse</span><span class="p">.</span><span class="na">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">gson</span><span class="p">.</span><span class="na">fromJson</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">(),</span><span class="w"> </span><span class="n">JsonObject</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">JsonObject</span><span class="w"> </span><span class="nf">uploadPdf</span><span class="p">(</span><span class="n">Path</span><span class="w"> </span><span class="n">pdfPath</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">pdfBytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">readAllBytes</span><span class="p">(</span><span class="n">pdfPath</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">boundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;----Boundary&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">ByteArrayOutputStream</span><span class="w"> </span><span class="n">outputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ByteArrayOutputStream</span><span class="p">();</span>
+<span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrintWriter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OutputStreamWriter</span><span class="p">(</span><span class="n">outputStream</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;--&quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">boundary</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;\r\n&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;Content-Disposition: form-data; name=\&quot;file\&quot;; filename=\&quot;&quot;</span><span class="p">)</span>
+<span class="w">              </span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">pdfPath</span><span class="p">.</span><span class="na">getFileName</span><span class="p">().</span><span class="na">toString</span><span class="p">()).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;\&quot;\r\n&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;Content-Type: application/pdf\r\n\r\n&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">outputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">pdfBytes</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;\r\n--&quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">boundary</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;--\r\n&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">HttpRequest</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">apiBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/step1/upload&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&quot;Content-Type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;multipart/form-data; boundary=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">boundary</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">POST</span><span class="p">(</span><span class="n">HttpRequest</span><span class="p">.</span><span class="na">BodyPublishers</span><span class="p">.</span><span class="na">ofByteArray</span><span class="p">(</span><span class="n">outputStream</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">()))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="na">send</span><span class="p">(</span>
+<span class="w">            </span><span class="n">request</span><span class="p">,</span>
+<span class="w">            </span><span class="n">HttpResponse</span><span class="p">.</span><span class="na">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">gson</span><span class="p">.</span><span class="na">fromJson</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">(),</span><span class="w"> </span><span class="n">JsonObject</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Additional methods similar to Python example...</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="9-security-compliance">9. Security &amp; Compliance</h2>
+<h3 id="91-security-features">9.1 Security Features</h3>
+<h4 id="911-cryptographic-security">9.1.1 Cryptographic Security</h4>
+<ul>
+<li><strong>Hash Algorithm</strong>: SHA-256 (FIPS 140-2 compliant)</li>
+<li><strong>Signature Algorithm</strong>: RSA with SHA-256</li>
+<li><strong>Signature Format</strong>: PKCS#7 (CMS)</li>
+<li><strong>Certificate Standard</strong>: X.509 v3</li>
+<li><strong>Key Length</strong>: Minimum 2048-bit RSA</li>
+</ul>
+<h4 id="912-xml-security">9.1.2 XML Security</h4>
+<ul>
+<li><strong>XML Signature</strong>: W3C XML-Signature standard</li>
+<li><strong>Canonicalization</strong>: Exclusive XML Canonicalization</li>
+<li><strong>Transforms</strong>: Enveloped signature transform</li>
+<li><strong>Certificate Embedding</strong>: X.509 certificate included in signature</li>
+</ul>
+<h4 id="913-transport-security">9.1.3 Transport Security</h4>
+<ul>
+<li><strong>Protocol</strong>: HTTPS/TLS 1.2+ for ESP communication</li>
+<li><strong>Certificate Validation</strong>: Full chain validation</li>
+<li><strong>Session Security</strong>: HTTP-only, secure cookies (in production)</li>
+</ul>
+<h3 id="92-compliance">9.2 Compliance</h3>
+<h4 id="921-indian-it-act-compliance">9.2.1 Indian IT Act Compliance</h4>
+<ul>
+<li>✅ Compliant with IT Act 2000 (amended 2008)</li>
+<li>✅ Follows CCA guidelines for digital signatures</li>
+<li>✅ Aadhaar-based authentication (eSign 2.1 &amp; 3.2)</li>
+</ul>
+<h4 id="922-data-protection">9.2.2 Data Protection</h4>
+<ul>
+<li><strong>Personal Data</strong>: Minimal collection (only signer name)</li>
+<li><strong>Data Retention</strong>: Session-based (cleared after signing)</li>
+<li><strong>File Storage</strong>: Temporary files auto-deleted (configurable)</li>
+<li><strong>Logging</strong>: No sensitive data in logs</li>
+</ul>
+<h3 id="93-security-best-practices">9.3 Security Best Practices</h3>
+<h4 id="931-production-deployment">9.3.1 Production Deployment</h4>
+<ol>
+<li><strong>Use HTTPS</strong>: Deploy behind reverse proxy with SSL/TLS</li>
+<li><strong>Secure Configuration</strong>: Store credentials in environment variables</li>
+<li><strong>File Permissions</strong>: Restrict access to config files</li>
+<li><strong>Regular Updates</strong>: Keep Java and dependencies updated</li>
+<li><strong>Firewall</strong>: Limit access to necessary ports only</li>
+</ol>
+<h4 id="932-certificate-management">9.3.2 Certificate Management</h4>
+<ul>
+<li>Store <code>.pfx</code> files securely (encrypted filesystem)</li>
+<li>Use strong passwords (minimum 12 characters)</li>
+<li>Rotate certificates before expiry</li>
+<li>Backup certificates securely</li>
+</ul>
+<h4 id="933-session-management">9.3.3 Session Management</h4>
+<ul>
+<li>Configure session timeout (default: 30 minutes)</li>
+<li>Use secure session cookies in production</li>
+<li>Clear sensitive session data after signing</li>
+</ul>
+<hr />
+<h2 id="10-troubleshooting">10. Troubleshooting</h2>
+<h3 id="101-common-issues">10.1 Common Issues</h3>
+<h4 id="1011-application-wont-start">10.1.1 Application Won't Start</h4>
+<p><strong>Issue:</strong> Port 8080 already in use
+<div class="highlight"><pre><span></span><code>Error: Port 8080 is already in use
+</code></pre></div></p>
+<p><strong>Solution:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Change port in application.properties</span>
+<span class="na">server.port</span><span class="o">=</span><span class="s">8081</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Issue:</strong> Java version error
+<div class="highlight"><pre><span></span><code>Error: Unsupported class file major version 61
+</code></pre></div></p>
+<p><strong>Solution:</strong> Install Java 17 or higher
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-version<span class="w">  </span><span class="c1"># Check current version</span>
+<span class="c1"># Install Java 17</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Issue:</strong> License file not found
+<div class="highlight"><pre><span></span><code>Error: License file not found at ./config/eSignLicense
+</code></pre></div></p>
+<p><strong>Solution:</strong> Check file path and permissions
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>./config/eSignLicense
+<span class="c1"># Ensure file exists and is readable</span>
+</code></pre></div></p>
+<hr />
+<h4 id="1012-pdf-upload-issues">10.1.2 PDF Upload Issues</h4>
+<p><strong>Issue:</strong> File too large
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maximum upload size exceeded&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Solution:</strong> Increase upload limit
+<div class="highlight"><pre><span></span><code><span class="na">spring.servlet.multipart.max-file-size</span><span class="o">=</span><span class="s">100MB</span>
+<span class="na">spring.servlet.multipart.max-request-size</span><span class="o">=</span><span class="s">100MB</span>
+</code></pre></div></p>
+<hr />
+<p><strong>Issue:</strong> Invalid PDF format
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid PDF file&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Solution:</strong> Ensure file is valid PDF (not corrupted)</p>
+<hr />
+<h4 id="1013-esp-communication-issues">10.1.3 ESP Communication Issues</h4>
+<p><strong>Issue:</strong> ESP callback not received
+<div class="highlight"><pre><span></span><code>ESP response timeout
+</code></pre></div></p>
+<p><strong>Solutions:</strong>
+1. <strong>Check callback URL is publicly accessible</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Test with ngrok for local development</span>
+ngrok<span class="w"> </span>http<span class="w"> </span><span class="m">8080</span>
+<span class="c1"># Use ngrok URL in application.properties</span>
+</code></pre></div></p>
+<ol>
+<li>
+<p><strong>Verify firewall allows inbound connections</strong></p>
+</li>
+<li>
+<p><strong>Check ESP logs</strong> for errors</p>
+</li>
+</ol>
+<hr />
+<p><strong>Issue:</strong> XML signature validation failed
+<div class="highlight"><pre><span></span><code>Error: Invalid XML signature
+</code></pre></div></p>
+<p><strong>Solutions:</strong>
+1. Verify certificate is valid and not expired
+2. Check certificate password is correct
+3. Ensure certificate is in PKCS#12 (.pfx) format</p>
+<hr />
+<h4 id="1014-signature-embedding-issues">10.1.4 Signature Embedding Issues</h4>
+<p><strong>Issue:</strong> Signature field not found
+<div class="highlight"><pre><span></span><code>Error: Signature field &#39;Signature1&#39; not found in PDF
+</code></pre></div></p>
+<p><strong>Solution:</strong> Ensure PDF was prepared with placeholder in Step 3</p>
+<hr />
+<p><strong>Issue:</strong> Invalid PKCS#7 signature
+<div class="highlight"><pre><span></span><code>Error: Invalid PKCS#7 signature data
+</code></pre></div></p>
+<p><strong>Solutions:</strong>
+1. Check ESP response was received correctly
+2. Verify signature data is not corrupted
+3. Check session data is intact</p>
+<hr />
+<h3 id="102-debugging">10.2 Debugging</h3>
+<h4 id="1021-enable-debug-logging">10.2.1 Enable Debug Logging</h4>
+<p>Add to <code>application.properties</code>:
+<div class="highlight"><pre><span></span><code><span class="na">logging.level.com.capricorn.esign</span><span class="o">=</span><span class="s">DEBUG</span>
+<span class="na">logging.level.org.springframework</span><span class="o">=</span><span class="s">INFO</span>
+</code></pre></div></p>
+<h4 id="1022-check-application-logs">10.2.2 Check Application Logs</h4>
+<p><strong>Linux:</strong>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>esign-sdk<span class="w"> </span>-f
+</code></pre></div></p>
+<p><strong>Docker:</strong>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>esign-sdk
+</code></pre></div></p>
+<p><strong>Windows:</strong>
+Check console output or redirect to file:
+<div class="highlight"><pre><span></span><code><span class="n">java</span> <span class="n">-jar</span> <span class="n">esign-sdk</span><span class="p">-</span><span class="n">2</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">jar</span> <span class="p">&gt;</span> <span class="n">esign</span><span class="p">.</span><span class="n">log</span> <span class="n">2</span><span class="p">&gt;&amp;</span><span class="n">1</span>
+</code></pre></div></p>
+<h4 id="1023-test-api-endpoints">10.2.3 Test API Endpoints</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test health</span>
+curl<span class="w"> </span>http://localhost:8080/api/esign/config
+
+<span class="c1"># Test mode setting</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/set-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;mode&quot;:&quot;2.1&quot;}&#39;</span>
+</code></pre></div>
+<hr />
+<h3 id="103-performance-tuning">10.3 Performance Tuning</h3>
+<h4 id="1031-jvm-options">10.3.1 JVM Options</h4>
+<p>For production, use these JVM options:
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-Xms2G<span class="w"> </span>-Xmx4G<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-XX:+UseG1GC<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-XX:MaxGCPauseMillis<span class="o">=</span><span class="m">200</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-jar<span class="w"> </span>esign-sdk-2.1.0.jar
+</code></pre></div></p>
+<h4 id="1032-file-cleanup">10.3.2 File Cleanup</h4>
+<p>Configure automatic cleanup of old files:
+<div class="highlight"><pre><span></span><code><span class="c1"># Add cron job (Linux)</span>
+<span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>find<span class="w"> </span>/opt/esign-sdk/temp<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>+7<span class="w"> </span>-delete
+<span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>find<span class="w"> </span>/opt/esign-sdk/signed<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>+30<span class="w"> </span>-delete
+</code></pre></div></p>
+<hr />
+<h2 id="11-appendices">11. Appendices</h2>
+<h3 id="111-glossary">11.1 Glossary</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ASP</strong></td>
+<td>Application Service Provider - Entity authorized to use eSign</td>
+</tr>
+<tr>
+<td><strong>ESP</strong></td>
+<td>eSign Service Provider - Government-authorized signing service</td>
+</tr>
+<tr>
+<td><strong>CCA</strong></td>
+<td>Controller of Certifying Authorities - Regulatory body</td>
+</tr>
+<tr>
+<td><strong>PKCS#7</strong></td>
+<td>Public Key Cryptography Standard #7 - Signature format</td>
+</tr>
+<tr>
+<td><strong>X.509</strong></td>
+<td>Standard for public key certificates</td>
+</tr>
+<tr>
+<td><strong>SHA-256</strong></td>
+<td>Secure Hash Algorithm 256-bit</td>
+</tr>
+<tr>
+<td><strong>OTP</strong></td>
+<td>One-Time Password</td>
+</tr>
+<tr>
+<td><strong>eKYC</strong></td>
+<td>Electronic Know Your Customer</td>
+</tr>
+<tr>
+<td><strong>Aadhaar</strong></td>
+<td>India's biometric identification system</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-file-structure-reference">11.2 File Structure Reference</h3>
+<div class="highlight"><pre><span></span><code>esign-sdk-2.1.0/
+├── esign-sdk-2.1.0.jar          # Main application JAR
+├── application.properties        # Configuration file
+├── config/                       # Configuration directory
+│   ├── eSignLicense             # eSign license file
+│   ├── privatekey.pfx           # ASP certificate
+│   └── sample.pdf               # Sample PDF for testing
+├── temp/                         # Temporary files (auto-created)
+│   ├── {uuid}.pdf               # Uploaded PDFs
+│   └── {uuid}_prepared.pdf      # Prepared PDFs with placeholders
+├── signed/                       # Signed PDFs (auto-created)
+│   └── {filename}_signed.pdf    # Final signed documents
+└── logs/                         # Application logs (optional)
+    └── esign-sdk.log
+</code></pre></div>
+<h3 id="113-http-status-codes">11.3 HTTP Status Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>When Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td>Successful request</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Invalid parameters</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Resource not found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>Server-side error</td>
+</tr>
+</tbody>
+</table>
+<h3 id="114-error-codes">11.4 Error Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Description</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INVALID_MODE</code></td>
+<td>Invalid eSign mode</td>
+<td>Use "2.1" or "3.2"</td>
+</tr>
+<tr>
+<td><code>FILE_NOT_FOUND</code></td>
+<td>PDF file not found</td>
+<td>Check file path</td>
+</tr>
+<tr>
+<td><code>INVALID_PDF</code></td>
+<td>Invalid PDF format</td>
+<td>Use valid PDF file</td>
+</tr>
+<tr>
+<td><code>LICENSE_ERROR</code></td>
+<td>License file error</td>
+<td>Check license file</td>
+</tr>
+<tr>
+<td><code>CERT_ERROR</code></td>
+<td>Certificate error</td>
+<td>Verify certificate and password</td>
+</tr>
+<tr>
+<td><code>ESP_ERROR</code></td>
+<td>ESP communication error</td>
+<td>Check network and ESP URL</td>
+</tr>
+<tr>
+<td><code>SIGNATURE_ERROR</code></td>
+<td>Signature embedding error</td>
+<td>Check ESP response</td>
+</tr>
+</tbody>
+</table>
+<h3 id="115-support-resources">11.5 Support &amp; Resources</h3>
+<p><strong>Documentation:</strong>
+- eSign API Specification: https://esign.digital/docs
+- CCA Guidelines: https://cca.gov.in</p>
+<p><strong>Support:</strong>
+- Email: support@www.esign.network
+- Phone: +91-XXX-XXX-XXXX
+- Website: https://www.esign.network/esign-sdk</p>
+<p><strong>Updates:</strong>
+- Check for updates: https://www.esign.network/esign-sdk/updates
+- Release notes: https://www.esign.network/esign-sdk/releases</p>
+<hr />
+<h2 id="document-revision-history">Document Revision History</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Changes</th>
+<th>Author</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-12-15</td>
+<td>Initial release</td>
+<td>Capricorn Technologies</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of Technical Documentation</strong></p>
+<p>© 2025 Capricorn Technologies. All rights reserved.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
