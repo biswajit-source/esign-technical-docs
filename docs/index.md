@@ -192,9 +192,9 @@ This package contains comprehensive technical documentation for the **eSign SDK 
 ## Support
 
 **Technical Support:**
-- Email: support@www.esign.network
+- Email: support@esign.network
 - Phone: +91-XXX-XXX-XXXX
-- Website: https://www.esign.network/esign-sdk
+- Website: https://www.esign.network/
 
 **Documentation Feedback:**
 If you find any issues or have suggestions for improving this documentation, please contact us.
@@ -207,7 +207,7 @@ If you find any issues or have suggestions for improving this documentation, ple
 |----------|-------|
 | **Document Package Version** | 1.0 |
 | **Release Date** | December 2025 |
-| **Author** | Capricorn Technologies |
+| **Author** | Capricorn Identity Service |
 | **Last Updated** | 2025-12-15 |
 | **Total Pages** | ~100+ pages |
 | **Format** | Markdown (.md) |

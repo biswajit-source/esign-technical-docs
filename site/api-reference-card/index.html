@@ -1,0 +1,1395 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../deployment-checklist/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>API Reference - eSign JAVA SDK v1.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#esign-sdk-v210-api-reference-card" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="eSign JAVA SDK v1.0" class="md-header__button md-logo" aria-label="eSign JAVA SDK v1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eSign JAVA SDK v1.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="eSign JAVA SDK v1.0" class="md-nav__button md-logo" aria-label="eSign JAVA SDK v1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    eSign JAVA SDK v1.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eSign-sdk-technical-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eSign-sdk-technical-documentation-part2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-esign-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set eSign Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-workflow-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing Workflow Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signing Workflow Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Upload PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-set-signer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Set Signer Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-generate-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Generate Hash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-convert-to-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Convert to Hex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-generate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Generate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-construct-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Construct XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-sign-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Sign XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-generate-esp-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Generate ESP Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-embed-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Embed Signature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esp-callback-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Callback Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP Callback Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp-response-esign-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Response (eSign 2.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-getdocs-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP GetDocs (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serve-pdf-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serve PDF Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-esp-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get ESP Response Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embed-signature-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embed Signature (Manual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-workflow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Workflow Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esign-mode-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eSign Mode Differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-esign-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set eSign Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-workflow-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing Workflow Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signing Workflow Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-upload-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Upload PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-set-signer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Set Signer Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-generate-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Generate Hash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-convert-to-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Convert to Hex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-generate-transaction-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Generate Transaction ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-construct-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Construct XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-sign-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Sign XML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-generate-esp-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Generate ESP Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-embed-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Embed Signature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esp-callback-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Callback Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP Callback Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp-response-esign-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Response (eSign 2.1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-getdocs-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP GetDocs (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-callback-esign-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP Callback (eSign 3.2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serve-pdf-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serve PDF Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-esp-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get ESP Response Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embed-signature-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embed Signature (Manual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-workflow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Workflow Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Responses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esign-mode-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eSign Mode Differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="esign-sdk-v210-api-reference-card">eSign SDK v2.1.0 - API Reference Card</h1>
+<p><strong>Quick Reference for All API Endpoints</strong></p>
+<p>Base URL: <code>http://localhost:8080/api/esign</code></p>
+<hr />
+<h2 id="configuration-endpoints">Configuration Endpoints</h2>
+<h3 id="set-esign-mode">Set eSign Mode</h3>
+<div class="highlight"><pre><span></span><code>POST /set-mode
+Body: {&quot;mode&quot;: &quot;2.1&quot; | &quot;3.2&quot;}
+Response: {&quot;success&quot;: true, &quot;mode&quot;: &quot;2.1&quot;, &quot;modeName&quot;: &quot;OTP-based Signing&quot;}
+</code></pre></div>
+<h3 id="get-configuration">Get Configuration</h3>
+<div class="highlight"><pre><span></span><code>GET /config
+Response: {&quot;success&quot;: true, &quot;config&quot;: {...}}
+</code></pre></div>
+<h3 id="reset-session">Reset Session</h3>
+<div class="highlight"><pre><span></span><code>POST /reset
+Response: {&quot;success&quot;: true, &quot;message&quot;: &quot;Session reset successfully&quot;}
+</code></pre></div>
+<hr />
+<h2 id="signing-workflow-endpoints">Signing Workflow Endpoints</h2>
+<h3 id="step-1-upload-pdf">Step 1: Upload PDF</h3>
+<div class="highlight"><pre><span></span><code>POST /step1/upload
+Content-Type: multipart/form-data
+Body: file=@document.pdf
+Response: {&quot;success&quot;: true, &quot;step&quot;: 1, &quot;fileName&quot;: &quot;...&quot;, &quot;documentId&quot;: &quot;...&quot;}
+</code></pre></div>
+<h3 id="step-2-set-signer-details">Step 2: Set Signer Details</h3>
+<div class="highlight"><pre><span></span><code>POST /step2/signer-details
+Body: {
+  &quot;signerName&quot;: &quot;John Doe&quot;,
+  &quot;docInfo&quot;: &quot;Contract&quot;,
+  &quot;pageNo&quot;: 1,
+  &quot;x1&quot;: 350, &quot;y1&quot;: 50, &quot;x2&quot;: 550, &quot;y2&quot;: 120
+}
+Response: {&quot;success&quot;: true, &quot;step&quot;: 2}
+</code></pre></div>
+<h3 id="step-3-generate-hash">Step 3: Generate Hash</h3>
+<div class="highlight"><pre><span></span><code>POST /step3/generate-hash
+Response: {&quot;success&quot;: true, &quot;step&quot;: 3, &quot;hashAlgorithm&quot;: &quot;SHA-256&quot;}
+</code></pre></div>
+<h3 id="step-4-convert-to-hex">Step 4: Convert to Hex</h3>
+<div class="highlight"><pre><span></span><code>POST /step4/convert-hex
+Response: {&quot;success&quot;: true, &quot;step&quot;: 4, &quot;hashHex&quot;: &quot;...&quot;}
+</code></pre></div>
+<h3 id="step-5-generate-transaction-id">Step 5: Generate Transaction ID</h3>
+<div class="highlight"><pre><span></span><code>POST /step5/generate-txn
+Response: {&quot;success&quot;: true, &quot;step&quot;: 5, &quot;transactionId&quot;: &quot;UKC:public:...&quot;}
+</code></pre></div>
+<h3 id="step-6-construct-xml">Step 6: Construct XML</h3>
+<div class="highlight"><pre><span></span><code>POST /step6/construct-xml
+Response: {&quot;success&quot;: true, &quot;step&quot;: 6, &quot;xmlPreview&quot;: &quot;...&quot;}
+</code></pre></div>
+<h3 id="step-7-sign-xml">Step 7: Sign XML</h3>
+<div class="highlight"><pre><span></span><code>POST /step7/sign-xml
+Response: {&quot;success&quot;: true, &quot;step&quot;: 7, &quot;signatureAlgorithm&quot;: &quot;RSA-SHA256&quot;}
+</code></pre></div>
+<h3 id="step-8-generate-esp-form">Step 8: Generate ESP Form</h3>
+<div class="highlight"><pre><span></span><code>POST /step8/generate-esp-form
+Response: {&quot;success&quot;: true, &quot;step&quot;: 8, &quot;htmlForm&quot;: &quot;...&quot;, &quot;espUrl&quot;: &quot;...&quot;}
+</code></pre></div>
+<h3 id="step-9-embed-signature">Step 9: Embed Signature</h3>
+<div class="highlight"><pre><span></span><code>POST /step9/embed-signature
+Body: {&quot;outputFileName&quot;: &quot;signed.pdf&quot;}
+Response: {&quot;success&quot;: true, &quot;step&quot;: 9, &quot;signedPdfPath&quot;: &quot;...&quot;}
+</code></pre></div>
+<hr />
+<h2 id="esp-callback-endpoints">ESP Callback Endpoints</h2>
+<h3 id="esp-response-esign-21">ESP Response (eSign 2.1)</h3>
+<div class="highlight"><pre><span></span><code>POST /esp-response
+Body: esignresp=&lt;XML response&gt;
+Response: HTML page
+</code></pre></div>
+<h3 id="esp-getdocs-esign-32">ESP GetDocs (eSign 3.2)</h3>
+<div class="highlight"><pre><span></span><code>POST /3.2/getdocs/
+Body: eSignResponse=&lt;XML response&gt;
+Response: &quot;OK&quot;
+</code></pre></div>
+<h3 id="esp-callback-esign-32">ESP Callback (eSign 3.2)</h3>
+<div class="highlight"><pre><span></span><code>GET/POST /3.2/callback/
+Query: txnRef=&lt;base64&gt;, status=&lt;status&gt;
+Response: HTML page
+</code></pre></div>
+<hr />
+<h2 id="utility-endpoints">Utility Endpoints</h2>
+<h3 id="serve-pdf-document">Serve PDF Document</h3>
+<div class="highlight"><pre><span></span><code>GET /documents/{documentId}.pdf
+Response: PDF file (application/pdf)
+</code></pre></div>
+<h3 id="get-esp-response-data">Get ESP Response Data</h3>
+<div class="highlight"><pre><span></span><code>GET /esp-response-data
+Response: {&quot;success&quot;: true, &quot;espResponseReceived&quot;: true, &quot;responseXml&quot;: &quot;...&quot;}
+</code></pre></div>
+<h3 id="embed-signature-manual">Embed Signature (Manual)</h3>
+<div class="highlight"><pre><span></span><code>POST /embed-signature
+Body: {&quot;transactionId&quot;: &quot;UKC:public:...&quot;}
+Response: {&quot;success&quot;: true, &quot;signedPdfPath&quot;: &quot;...&quot;}
+</code></pre></div>
+<hr />
+<h2 id="complete-workflow-example">Complete Workflow Example</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set mode</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/set-mode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;mode&quot;:&quot;2.1&quot;}&#39;</span>
+
+<span class="c1"># Upload PDF</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step1/upload<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file=@document.pdf&quot;</span>
+
+<span class="c1"># Set signer details</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step2/signer-details<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;signerName&quot;:&quot;John Doe&quot;,&quot;docInfo&quot;:&quot;Contract&quot;}&#39;</span>
+
+<span class="c1"># Execute steps 3-8</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step3/generate-hash
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step4/convert-hex
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step5/generate-txn
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step6/construct-xml
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step7/sign-xml
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step8/generate-esp-form
+
+<span class="c1"># After ESP signing, embed signature</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/esign/step9/embed-signature<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;outputFileName&quot;:&quot;signed.pdf&quot;}&#39;</span>
+</code></pre></div>
+<hr />
+<h2 id="error-responses">Error Responses</h2>
+<p>All endpoints return errors in this format:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Error message description&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Common HTTP Status Codes:</strong>
+- <code>200</code> - Success
+- <code>400</code> - Bad Request (invalid parameters)
+- <code>404</code> - Not Found
+- <code>500</code> - Internal Server Error</p>
+<hr />
+<h2 id="session-management">Session Management</h2>
+<ul>
+<li>All endpoints use HTTP sessions (cookies)</li>
+<li>Session persists across steps 1-9</li>
+<li>Use same browser/client for entire workflow</li>
+<li>Call <code>/reset</code> to clear session</li>
+</ul>
+<hr />
+<h2 id="esign-mode-differences">eSign Mode Differences</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>eSign 2.1</th>
+<th>eSign 3.2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Aadhaar OTP</td>
+<td>eKYC</td>
+</tr>
+<tr>
+<td><strong>Callback</strong></td>
+<td><code>/esp-response</code></td>
+<td><code>/3.2/getdocs/</code> + <code>/3.2/callback/</code></td>
+</tr>
+<tr>
+<td><strong>Document URL</strong></td>
+<td>Not required</td>
+<td>Required (public URL)</td>
+</tr>
+<tr>
+<td><strong>Response</strong></td>
+<td>Synchronous</td>
+<td>Asynchronous</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-tips">Quick Tips</h2>
+<ul>
+<li><strong>Always set mode first</strong> (<code>/set-mode</code>)  </li>
+<li><strong>Follow steps in order</strong> (1 → 2 → 3 → ... → 9)  </li>
+<li><strong>Use same session</strong> for all steps  </li>
+<li><strong>Public callback URL</strong> required for ESP  </li>
+<li><strong>Check session data</strong> with <code>/esp-response-data</code>  </li>
+</ul>
+<hr />
+<h2 id="support">Support</h2>
+<p><strong>Full Documentation</strong>: eSign-sdk-technical-documentation.md<br />
+<strong>Quick Start</strong>: quick-start-guide.md<br />
+<strong>Email</strong>: support@www.esign.network<br />
+<strong>Website</strong>: https://www.esign.network/esign-sdk</p>
+<hr />
+<p>© 2025 Capricorn Technologies</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
